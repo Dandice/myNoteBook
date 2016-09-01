@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		window.onload =  function () {
+			var basketModule = (function () {
+				var basket = [];
+				function doSomethingPrivate() {
+					
+				}
+				function doSomethingElsePrivate() {
+					
+				}
+				return {
+					addItem: function (values) {
+						basket.push(values);
+					},
+					getItemCount: function () {
+						return basket.length;
+					},
+					doSomething: doSomethingPrivate,
+					getTotal: function () {
+						var itemCount = this.getItemCount(),
+							total = 0;
+						while (itemCount--) {
+							toal += basket[itemCount].price;
+						}
+						return total;
+					}
+				}
+			});
+			var hello = basketModule();
+			console.log(hello);
+			console.log(basketModule);
+			basketModule.addItem({
+				item: 'bread',
+				price: 0.5
+			});
+			basketModule.addItem({
+				item: 'butter',
+				price: 0.3
+			});
+			console.log(basketModule.getItemCount());
+			console.log(basketModule.getTotal());
+		};
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
